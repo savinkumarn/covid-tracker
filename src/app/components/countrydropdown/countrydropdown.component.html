@@ -1,0 +1,12 @@
+<p class="text-white h2">COUNTRY</p>
+<select class="btn btn-secondary" [(ngModel)]="selectedCountry" (change)="countryChanged()">
+    <option>GLOBAL</option>
+    <option *ngFor=" let country of countries ">{{country | uppercase }}</option>
+</select>
+<hr>
+<div class="items">
+    <app-confirmed class="item" [confirmedInput]="confirmed"></app-confirmed>
+    <app-recovered class="item" [recoveredInput]="recovered"></app-recovered>
+    <app-death class="item" [deathInput]="death"></app-death>
+</div>
+<app-footer [lastUpdatedInput]="lastUpdated"></app-footer>
